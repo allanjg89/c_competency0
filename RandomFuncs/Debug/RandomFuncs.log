@@ -1,0 +1,6 @@
+﻿  randomFuncs.c
+c:\users\agamb\ncwdg\randomfuncs\randomfuncs\randomfuncs.c(56): warning C4305: 'function': truncation from 'double' to 'float'
+c:\users\agamb\ncwdg\randomfuncs\randomfuncs\randomfuncs.c(87): warning C4013: 'srand' undefined; assuming extern returning int
+c:\users\agamb\ncwdg\randomfuncs\randomfuncs\randomfuncs.c(108): warning C4013: 'rand' undefined; assuming extern returning int
+  RandomFuncs.vcxproj -> C:\Users\agamb\NCWDG\RandomFuncs\Debug\RandomFuncs.exe
+  RandomFuncs.vcxproj -> C:\Users\agamb\NCWDG\RandomFuncs\Debug\RandomFuncs.pdb (Partial PDB)
