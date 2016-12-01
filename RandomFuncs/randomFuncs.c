@@ -23,29 +23,55 @@ void save_to_file(char *filename, char *output_string);
 
 int main()
 {
-	int inum_dice, num_sides, inum_rolls;
+	int inum_dice, num_sides, inum_rolls, imenu;
 	char csave, crepeat = 'y';
 	double dradius, dside_len, darea, dvolume;
 
 	while (crepeat == 'y')
 	{
-		printf("Lets Roll Some Dice!\n Please Specify the number of dice, the number of sides and the number of rolls. Space Seperated please:");
-		scanf_s("%i%i%i", &inum_dice, &num_sides, &inum_rolls);
-		roll_dice(inum_dice, num_sides, inum_rolls);
-		printf("\n\n");
+		printf("What would you like to do?\n\n\
+	1)Roll Dice\n\
+	2)Compute the surface are of a circle\n\
+	3)Compute the volume of a cube\n\
+	4) Test your the \"other\" function\n\n");
 
-		printf("Now lets compute the surface darea of a circle. Please provide the dradius: ");
-		scanf_s("%lf", &dradius);
-		darea = surface_area(dradius);
-		printf("The surface darea of a circle with radius %f is %f", dradius, darea);
-		printf("\n\n");
+		scanf_s("%i", &imenu);
 
-		printf("Now lets compute the dvolume of a cube. Please provide the side-length: ");
-		scanf_s("%lf", &dside_len);
-		dvolume = volume_of_cube(dside_len);
-		printf("The volume of a cube with side-length %f is %f", dside_len, dvolume);
-		printf("\n\n");
+		switch (imenu)
+		{
+		case 1:
+			printf("Lets Roll Some Dice!\n Please Specify the number of dice, the number of sides and the number of rolls. Space Seperated please:");
+			scanf_s("%i%i%i", &inum_dice, &num_sides, &inum_rolls);
+			roll_dice(inum_dice, num_sides, inum_rolls);
+			printf("\n\n");
+			break;
+		case 2:
+			printf("Lets compute the surface area of a circle. Please provide the radius: ");
+			scanf_s("%lf", &dradius);
+			darea = surface_area(dradius);
+			printf("The surface area of a circle with radius %f is %f", dradius, darea);
+			printf("\n\n");
+			break;
+		case 3:
+			printf("Lets compute the volume of a cube. Please provide the side-length: ");
+			scanf_s("%lf", &dside_len);
+			dvolume = volume_of_cube(dside_len);
+			printf("The volume of a cube with side-length %f is %f", dside_len, dvolume);
+			printf("\n\n");
+			break;
+		case 4:
+			printf("\n\n");
+			printf("Testing mypow func with 3.2 to the 3 power: %f", mypow(3.4, 3));
+			break;
+		default:
+			break;
+		}
+		
 
+		
+
+		
+		/*
 		printf("Would you like to save the area and volume results? (y/n): ");
 		scanf_s(" %c", &csave, 1);
 		getchar();
@@ -59,12 +85,10 @@ int main()
 			sprintf_s(output_string, strsize, "The surface area of a circle with radius %f is %f\nThe volume of a cube with side-length %f is %f", dradius, darea, dside_len, dvolume);
 			save_to_file(path, output_string);
 		}
-
+		*/
+		
 		printf("\n\n");
-		printf("Testing mypow func with 3.2 to the 3 power: %f", mypow(3.4, 3));
-
-		printf("\n\n");
-		printf("Would you like to crepeat this entire process? (y/n): ");
+		printf("Would you like to go back to the original menu? (y/n): ");
 		scanf_s(" %c", &crepeat, 1);
 
 		getchar();
